@@ -16,6 +16,7 @@ class MainScreen : AppCompatActivity() {
         //All Declarations
         val edtMin = findViewById<EditText>(R.id.edtMin)
         val edtMax = findViewById<EditText>(R.id.edtMax)
+        val txtAverage = findViewById<TextView>(R.id.txtAverage)
         val txtMondayAVG = findViewById<TextView>(R.id.txtMondayAVG)
         val txtTuesdayAVG = findViewById<TextView>(R.id.txtTuesdayAVG)
         val txtWednesdayAVG = findViewById<TextView>(R.id.txtWednesdayAVG)
@@ -85,10 +86,14 @@ class MainScreen : AppCompatActivity() {
                 var tempint2 = (edtMin.text.toString().toInt())
                 var avgtemp = (tempint2 + tempint1) / 2
                 txtFridayAVG.setText("Friday Average :" + avgtemp.toString())
+                // This is commented out wether you want to use it or not
+                //var tempint = txtMondayAVG.text.toString().toInt() + txtTuesdayAVG.text.toString().toInt() + txtWednesdayAVG.text.toString().toInt() + txtThursdayAVG.text.toString().toInt() + txtFridayAVG.text.toString().toInt()
+               // txtAverage.setText((tempint/5).toString())
             }else
             {
                 txtFridayAVG.setText("Mon: Invalid Input")
             }
+
         }
         //Buttons to change screen and quit app
         val intent = Intent(this, ExtraInfoScreen::class.java)
